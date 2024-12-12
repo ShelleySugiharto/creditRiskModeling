@@ -1,0 +1,57 @@
+CHAPTER 1 AND GENERAL OVERVIEW:
+
+Pricing VS. Risk Management:
+Pricing follows an asset focusing on the central point in a default-loss distribution.
+Pricing uses the risk-neutral measure (Q).
+
+Risk management tends to focus on the tail in a default-loss distribution.
+Risk management uses the physical measure (P).
+
+Difference between credit-risk and market-risk?
+
+credit-risk:
+- tends to be idiosyncratic
+- tends to focus on static movement
+- has less historical data to make definitive conclusions
+
+market-risk:
+- tends to be systematic
+- tends to focus on dynamic movement
+- has abundant historical data, helping to make definitive conclusions
+
+**However, both credit and market risk can cross-over
+    - specifically, the movement in market-risk is also static in a sense
+    (for analysis against different time periods)
+
+
+Analyzing Credit:
+- decide the type of model:
+    - static/dynamic
+    - structured/reduced-form
+    - independent/dependent
+    - instrument-based/portfolio-based
+- Define relationship between credit obligor exposure and their default probabilities
+- Define relationahip according to regions/sections -> 
+basically, find reasonable patterns
+- Create defult-loss distribution based off chosen credit risk model
+
+Types of Credit Risk Models:
+- independent: simplest, assumes default events are independent of their obligor
+- mixture: assumes less default independence by randomizing default probabilities
+- Threshold: looks at default events in more detail, permits default dependence,
+and allows for alt distributional choices (Most popular)
+
+common risk measures in portfolio management:
+- Credit VaR
+- Expected shortfall (aka, conditional VaR or tail VaR)
+(both measured by confidence lvls)
+
+**Quantiles are important because they are the VaR measures of different confidence lvls
+
+Decomposing Risk Measures:
+- using diagnostic tools to benchmark
+- using different models allows for proper assessment of credit obligor status
+- comparison between individual and threshold models allows for certain data confirmations
+- use of mixture models usually helps more in benchmarking, finding outliers and possible
+issues in creating our models
+
