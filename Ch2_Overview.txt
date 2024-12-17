@@ -1,2 +1,12 @@
 CHAPTER 2 OVERVIEW:
+The goal of modelling is to focus in on the essence of a situation.
+Modelling cannot exctly replicate real life, but it can reduce the dimensionality of it,
+and get to a emphasized portion of it.
+
+The world of credit risk relies on 2 outcomes for a risk event:
+- default
+- survival
+
+In market risk, there are different outcomes and considerations, making it continuous in most cases.
+Credit risk is then discrete.
 
