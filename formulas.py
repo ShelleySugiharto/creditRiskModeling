@@ -1,6 +1,7 @@
 #Important formulas + brief explanations
 
 import numpy as np
+import scipy as sp
 
 #Generalized Price of Credit Risk (based on default loss distr)
 
@@ -32,6 +33,7 @@ VaR = cumDL(1 - a)
 
 #----------------------------------------------------------------------------------------------
 #Default loss, L, expected loss, E(L), variation of loss, var(L), volatility of loss, o_L, of default event, D (without consideration of specific quantiles)
+#for a single instrument
 
 Indicator = 0 #indicator of default event can either result in 1 (default before time T, probability p)
 #or 0 (survival until time T, probability 1-p)
@@ -52,6 +54,36 @@ var_L = (p * c**2) - E_Loss**2
 
 o_L = np.sqrt(var_L) #volatility
 
+#now for multiple instruments
+'''
+*# of cases != # of outcomes/defaults
+*# of cases = 2^N
+
+D = total defaults, N = counterparties, k = possible defaults, p = probability of default
+D = summation of all indicators default value for each N (1).
+N_k = Occurence to total defaults ration Given N counterparties, how many k defaults will occur 
+(N!)/((N-k)!k!)
+p_D = probability of each amount of default (outcome) --> p^k(1-p)^N-k
+p_k = probability of observing k defaults over whole scenario --> # of outcomes * p_D --> (N!)/((N-k)!k!) * p^k(1-p)^N-k
+
+*for simplicity's sake, p is relatively the same for all D_N (default of each N counterparty)
+'''
+N = 4 #4 is an example of amt of counterparties/instruments
+k = np.arange(0,N,1)
+D = N + 1
+N_k = np.zeros(D)
+p_D = np.zeros(D)
+p_k = np.zeros(D)
+
+
+for i in range(len(k)):
+    N_k[i] = sp.special.factorial(N)/(sp.special.factorial(N - k[i])*sp.special.factorial(k[i]))
+
+for i in range(len(k)):
+   p_D[i] = p**k[i]*(1-p)**(N-k[i])
+
+for i in range(len(k)):
+    p_k[i] = N_k[i] * p_D[i]
 
 
 
