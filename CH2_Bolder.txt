@@ -10,8 +10,19 @@ The world of credit risk relies on 2 outcomes for a risk event:
 In market risk, there are different outcomes and considerations, making it continuous in most cases.
 Credit risk is then discrete.
 
+Creating distributions:
+
 default-loss distribution is a default outcome vs. frequency 
 *the count chart is only counting the amt of times that default scenario would happen
 
 count charts seem to follow a normal distribution, while default-loss tends to follow a gamma distribution
+default-loss distributions normally are left-skewed (lower amt of defults)
+
+As a binomial distribution's parameter N increases, it becomes gaussian
+Larger portfolios lean toward normal distribution
+
+*Without the realistic differences of obligor probabilities, DL distributions become more systematic and 
+deterministic --> unlikely for reliable credit-risk assessment
+
+
 

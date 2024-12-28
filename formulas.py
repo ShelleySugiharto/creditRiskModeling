@@ -54,7 +54,7 @@ var_L = (p * c**2) - E_Loss**2
 
 o_L = np.sqrt(var_L) #volatility
 
-#now for multiple instruments
+#now for multiple instruments assuming independence
 '''
 *# of cases != # of outcomes/defaults
 *# of cases = 2^N
@@ -84,6 +84,6 @@ for i in range(len(k)):
 
 for i in range(len(k)):
     p_k[i] = N_k[i] * p_D[i]
-
+#----------------------------------------------------------------------------------------------
 
 
